@@ -1,4 +1,13 @@
 from django.db import models
+import firebase_admin
+from fcm_django.models import FCMDevice
+from firebase_admin import credentials
+from firebase_admin.messaging import Message
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+cred = credentials.Certificate('serviceAccountKey.json')
+firebase_admin.initialize_app(cred)
 
 
 # Create your models here.
@@ -16,7 +25,7 @@ class Member(models.Model):
         ordering = ["pk"]
 
     def __str__(self):
-        return self.member_name.__str__()
+        return self.member_name.get('EN', 'no name')
 
 
 class Section(models.Model):
@@ -31,6 +40,34 @@ class Section(models.Model):
         return self.section_name
 
 
+@receiver(post_save, sender=Section)
+def send_notification_courses(sender, instance, created, **kwargs):
+    if created:
+        devices = FCMDevice.objects.all()
+        for device in devices:
+            # Determine the language for the notification
+            language = device.language if hasattr(device, 'language') else 'EN'
+
+            # Construct the notification message based on the language
+            if language == 'AR':
+                title = "تم إضافة قسم جديد"
+                body = instance.name.get('AR', 'اسم القسم غير متوفر')
+            else:  # Default to English
+                title = "A New Section Added"
+                body = instance.name.get('EN', 'Section name not available')
+
+            # Define the JSON message format
+            message_data = {
+                "title": title,
+                "body": body,
+                "screen": "screen_name",  # Replace with your actual screen name
+                "note": "Section"  # Replace with your actual notification type
+            }
+
+            # Send the message
+            device.send_message(data=message_data)
+
+
 class Project(models.Model):
     project_field = models.JSONField(null=True)  # نوع المشروع ويب تطبيق كذا
     project_name = models.JSONField(null=True)  # اسم المشروع
@@ -43,7 +80,7 @@ class Project(models.Model):
         ordering = ["pk"]
 
     def __str__(self):
-        return self.project_name.__str__()
+        return self.project_name.get('EN', 'no name')
 
 
 class Project_Picture_mobile(models.Model):
@@ -81,7 +118,35 @@ class Service(models.Model):
         ordering = ["pk"]
 
     def __str__(self):
-        return self.service_name.__str__()
+        return self.service_name.get('EN', 'no name')
+
+
+@receiver(post_save, sender=Service)
+def send_notification_courses(sender, instance, created, **kwargs):
+    if created:
+        devices = FCMDevice.objects.all()
+        for device in devices:
+            # Determine the language for the notification
+            language = device.language if hasattr(device, 'language') else 'EN'
+
+            # Construct the notification message based on the language
+            if language == 'AR':
+                title = "تم إضافة خدمة جديدة"
+                body = instance.name.get('AR', 'اسم الخدمة غير متوفر')
+            else:  # Default to English
+                title = "A New Service Added"
+                body = instance.name.get('EN', 'Service name not available')
+
+            # Define the JSON message format
+            message_data = {
+                "title": title,
+                "body": body,
+                "screen": "screen_name",  # Replace with your actual screen name
+                "note": "Service"  # Replace with your actual notification type
+            }
+
+            # Send the message
+            device.send_message(data=message_data)
 
 
 class Course(models.Model):
@@ -97,7 +162,35 @@ class Course(models.Model):
         ordering = ["pk"]
 
     def __str__(self):
-        return self.name.__str__()
+        return self.name.get('EN', 'No name')
+
+
+@receiver(post_save, sender=Course)
+def send_notification_courses(sender, instance, created, **kwargs):
+    if created:
+        devices = FCMDevice.objects.all()
+        for device in devices:
+            # Determine the language for the notification
+            language = device.language if hasattr(device, 'language') else 'EN'
+
+            # Construct the notification message based on the language
+            if language == 'AR':
+                title = "تم إضافة كورس جديد"
+                body = instance.name.get('AR', 'اسم الدورة غير متوفر')
+            else:  # Default to English
+                title = "A New Course Added"
+                body = instance.name.get('EN', 'Course name not available')
+
+            # Define the JSON message format
+            message_data = {
+                "title": title,
+                "body": body,
+                "screen": "screen_name",  # Replace with your actual screen name
+                "note": "Course"  # Replace with your actual notification type
+            }
+
+            # Send the message
+            device.send_message(data=message_data)
 
 
 class Student_Project_Request(models.Model):
@@ -134,3 +227,15 @@ class Company_Request(models.Model):
 
     def __str__(self):
         return self.agent_name
+
+
+class FCMDevice(models.Model):
+    registration_id = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
+    language = models.CharField(max_length=10, choices=[('EN', 'English'), ('AR', 'Arabic')])
+
+    class Meta:
+        ordering = ["pk"]
+
+    def __str__(self):
+        return self.registration_id

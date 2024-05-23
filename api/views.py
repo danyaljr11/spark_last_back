@@ -1,4 +1,3 @@
-import requests
 from rest_framework import generics, mixins, status
 from rest_framework.mixins import CreateModelMixin
 from rest_framework.response import Response
@@ -233,40 +232,10 @@ class OurProjectDetails(generics.RetrieveAPIView):
     lookup_field = 'pk'
 
 
-class SendNotificationAPIView(CreateModelMixin, APIView):
-    def post(self, request, *args, **kwargs):
-        # Extract notification data from request data
-        title = request.data.get('title')
-        text = request.data.get('text')
-        icon = request.data.get('icon')
-
-        audience = {"included_segments": ["All"]}
-        # Ensure required fields are provided
-        if not title or not text:
-            return Response({"error": "Title and text are required fields"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Prepare notification payload
-        notification = {
-            "app_id": "d03c5b43-5192-4f91-b5e6-69c79a0b0c0a",
-            "contents": {"en": text},
-            "headings": {"en": title},
-            "included_segments": ["All"]
-        }
-        if icon:
-            notification["small_icon"] = icon
-
-        # Send notification using OneSignal REST API
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": "Basic OWIwNzA0MjctY2QyMi00MTAzLTkyOGYtNjAyNmMwMmY2ZmQx"
-        }
-        response = requests.post("https://onesignal.com/api/v1/notifications", json=notification, headers=headers)
-
-        # Check if notification was sent successfully
-        if response.status_code == 200:
-            return Response({"message": "Notification sent successfully"}, status=status.HTTP_200_OK)
-        else:
-            return Response({"error": "Failed to send notification"}, print(response.content))
-
-    def create(self, request, *args, **kwargs):
-        return self.post(request, *args, **kwargs)
+class FCMDeviceView(APIView):
+    def post(self, request, format=None):
+        serializer = FCMDeviceSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

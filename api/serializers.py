@@ -155,11 +155,8 @@ class ProjectSerializer2(serializers.ModelSerializer):
         return sliced_desc
 
 
-class NotificationSerializer(serializers.Serializer):
-    title = serializers.CharField(max_length=100)
-    text = serializers.CharField()
-    icon = serializers.CharField(max_length=255, required=False)
-
-
-
+class FCMDeviceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FCMDevice
+        fields = ['registration_id', 'type', 'language']
 

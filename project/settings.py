@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'fcm_django',
 ]
 
 REST_FRAMEWORK = {}

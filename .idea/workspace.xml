@@ -5,13 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb8d4a07-a073-4a93-bae8-0f0df0760ec5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/spark_last_back.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/service_icons/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_2EMi286.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_7wtPIjw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_hQktfTZ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/service_icons/web_developer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/course_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/course_images/web_development.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/section_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/section_images/web_development.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_A2oeZF3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_dGn1zSd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_xfVZ8eO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/web_development.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceAccountKey.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/course_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/course_images/web_development.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/section_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/section_images/web_development.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_1CaLhhD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_teZcgq8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_xreBgj6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_images/service_images/web_development.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,23 +44,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="danyal" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2g9zcX3RGyPCbeIdHAgVqvGQNEU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -53,5 +86,33 @@
       <updated>1715124661135</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

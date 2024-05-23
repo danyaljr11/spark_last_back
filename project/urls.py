@@ -21,7 +21,7 @@ urlpatterns = [
     path('rest/student_courses/<int:pk>', views.StudentCourses.as_view()),
     path('rest/our_projects_list/', views.OurProjectsList.as_view()),
     path('rest/our_project_details/<int:pk>', views.OurProjectDetails.as_view()),
-    path('send-notification/', views.SendNotificationAPIView.as_view()),
+    path('fcm-device/', views.FCMDeviceView.as_view()),
 
 ]
 
