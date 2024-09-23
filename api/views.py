@@ -3,6 +3,7 @@ from rest_framework.mixins import CreateModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import *
+from rest_framework.generics import CreateAPIView
 
 
 class service_list_mobile(generics.GenericAPIView):
@@ -114,37 +115,49 @@ class sections_list_mobile(generics.GenericAPIView):
         })
 
 
-class CompanyRequestCreateView(CreateModelMixin, generics.GenericAPIView):
+class CompanyRequestCreateView(CreateAPIView):
     queryset = Company_Request.objects.all()
     serializer_class = Company_Request_Serializer
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-    def perform_create(self, serializer):
         agent_name = serializer.validated_data['agent_name']
         company_name = serializer.validated_data['company_name']
         service_id = serializer.validated_data['service'].id
 
         # Check for duplicate requests
-        duplicate_requests = Company_Request.objects.filter(agent_name=agent_name, company_name=company_name,
-                                                            service_id=service_id)
+        duplicate_requests = Company_Request.objects.filter(
+            agent_name=agent_name,
+            company_name=company_name,
+            service_id=service_id
+        )
 
         if duplicate_requests.exists():
-            raise serializers.ValidationError("Duplicate request")
+            return Response({
+                "id": 2,
+                "message": "Duplicated request"
+            }, status=status.HTTP_200_OK)
 
         # Save the request
         serializer.save()
 
+        return Response({
+            "id": 1,
+            "message": "Request submitted successfully"
+        }, status=status.HTTP_201_CREATED)
 
-class StudentCourseRequest(CreateModelMixin, generics.GenericAPIView):
+
+
+class StudentCourseRequest(CreateAPIView):
     queryset = Student_Course_Request.objects.all()
     serializer_class = Student_Course_Request_Serializer
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-    def perform_create(self, serializer):
         name = serializer.validated_data['name']
         phone = serializer.validated_data['phone']
         course = serializer.validated_data['course'].id
@@ -153,20 +166,29 @@ class StudentCourseRequest(CreateModelMixin, generics.GenericAPIView):
         duplicate_requests = Student_Course_Request.objects.filter(name=name, phone=phone, course=course)
 
         if duplicate_requests.exists():
-            raise serializers.ValidationError("Duplicate request")
+            return Response({
+                "id": 2,
+                "message": "Duplicated request"
+            }, status=status.HTTP_200_OK)
 
         # Save the request
         serializer.save()
 
+        return Response({
+            "id": 1,
+            "message": "Request submitted successfully"
+        }, status=status.HTTP_201_CREATED)
 
-class StudentProjectRequest(CreateModelMixin, generics.GenericAPIView):
+
+
+class StudentProjectRequest(CreateAPIView):
     queryset = Student_Project_Request.objects.all()
     serializer_class = Student_Project_Request_Serializer
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-    def perform_create(self, serializer):
         name = serializer.validated_data['name']
         phone = serializer.validated_data['phone']
         project = serializer.validated_data['project'].id
@@ -175,10 +197,19 @@ class StudentProjectRequest(CreateModelMixin, generics.GenericAPIView):
         duplicate_requests = Student_Project_Request.objects.filter(name=name, phone=phone, project=project)
 
         if duplicate_requests.exists():
-            raise serializers.ValidationError("Duplicate request")
+            return Response({
+                "id": 2,
+                "message": "Duplicated request"
+            }, status=status.HTTP_200_OK)
 
         # Save the request
         serializer.save()
+
+        return Response({
+            "id": 1,
+            "message": "Request submitted successfully"
+        }, status=status.HTTP_201_CREATED)
+
 
 
 class StudentProjects(APIView):

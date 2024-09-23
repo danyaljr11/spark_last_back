@@ -5,43 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb8d4a07-a073-4a93-bae8-0f0df0760ec5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/service_icons/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_2EMi286.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_7wtPIjw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/service_icons/IT_hQktfTZ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/service_icons/web_developer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/course_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/course_images/web_development.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mobile_images/section_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/section_images/web_development.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_A2oeZF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_dGn1zSd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/IT_xfVZ8eO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile_images/service_images/web_development.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceAccountKey.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/course_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/course_images/web_development.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web_images/section_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/section_images/web_development.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_1CaLhhD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_teZcgq8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/service_images/IT_xreBgj6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_images/service_images/web_development.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceAccountKey.json" beforeDir="false" afterPath="$PROJECT_DIR$/serviceAccountKey.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -66,13 +49,19 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danya/PycharmProjects/spark_last_back&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danya\PycharmProjects\spark_last_back" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -85,6 +74,15 @@
       <option name="presentableId" value="Default" />
       <updated>1715124661135</updated>
     </task>
+    <task id="LOCAL-00001" summary="with notifications for course and service and section">
+      <option name="closed" value="true" />
+      <created>1716429866240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716429866240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="with notifications for course and service and section" />
+    <option name="LAST_COMMIT_MESSAGE" value="with notifications for course and service and section" />
   </component>
 </project>

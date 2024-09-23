@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import *
+from fcm_django.models import FCMDevice
 
 
 class Member_Serializer_Web(serializers.ModelSerializer):
@@ -17,13 +18,13 @@ class Member_Serializer_Mobile(serializers.ModelSerializer):
 class Section_Serializer_Web(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ['pk', 'section_name', 'section_image_web']
+        fields = ['pk', 'name', 'section_image_web']
 
 
 class Section_Serializer_Mobile(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ['pk', 'section_name', 'section_image_mobile']
+        fields = ['pk', 'name', 'section_image_mobile']
 
 
 class Project_Picture_Serializer_Web(serializers.ModelSerializer):
@@ -73,19 +74,19 @@ class Student_Project_Serializer_Mobile(serializers.ModelSerializer):
 class Service_Serializer_Mobile_all(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['pk', 'service_name', 'service_icon', 'service_picture_mobile', 'service_description']
+        fields = ['pk', 'name', 'service_icon', 'service_picture_mobile', 'service_description']
 
 
 class Service_Serializer_Web(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['pk', 'service_name', 'service_icon', 'service_picture_web', 'service_description']
+        fields = ['pk', 'name', 'service_icon', 'service_picture_web', 'service_description']
 
 
 class Service_Serializer_Mobile_short(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['id', 'service_name', 'service_icon']
+        fields = ['id', 'name', 'service_icon']
 
 
 class Course_Serializer_Web(serializers.ModelSerializer):
@@ -158,5 +159,4 @@ class ProjectSerializer2(serializers.ModelSerializer):
 class FCMDeviceSerializer(serializers.ModelSerializer):
     class Meta:
         model = FCMDevice
-        fields = ['registration_id', 'type', 'language']
-
+        fields = ['registration_id', 'type']
